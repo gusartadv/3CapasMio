@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+        <div id="header">
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            
+        </div>
+        <div id="sidebar">
+            <ul id="nav">
+                <li class="active" id="H">Home</li>
+                <li class="active" id="A">Admin</li>
+                <li class="active" id="L">Datos</li>
+                <li class="active" id="S">Experiencias</li>
+                <li class="active" id="R">Referencias</li>
+                <li class="active" id="E">Estudios</li>
+                
+            </ul>
+        </div>
+        <div id="content">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+       
+        
+       
+    </div>
+   
+   
+    </form>
+   
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Presentacion.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="header">
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"></asp:LinkButton>
+            </div>
+            <div id="sidebar">
+                <ul id="nav">
+                    <li class="active" id="H">Home</li>
+                    <li class="active" id="A">Admin</li>
+                    <li class="active" id="L">Datos</li>
+                    <li class="active" id="S">Experiencias</li>
+                    <li class="active" id="R">Referencias</li>
+                    <li class="active" id="E"><a href="Estudios.aspx">Estudios</a></li>
+                </ul>
+            </div>
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div><!---->
+    </form>
+</body>
+</html>

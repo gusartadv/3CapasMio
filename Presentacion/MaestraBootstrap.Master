@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MaestraBootstrap.master.cs" Inherits="Presentacion.MaestraBootstrap" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.css" />    
+    <link href="Bootstrap/css/dashboard.css" rel="stylesheet" />
+    <style type="text/css" id="Style1"></style>
+    
+    
+    <script type="text/javascript">
+       
+    </script>
+
+
+<style type="text/css">
+.ico{padding-right:5px;}
+
+.navbar-login 
+{
+  float: right;
+  height: 50px;
+  padding: 15px 15px 15px 5px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #999;
+}
+.imglogin
+{
+  float: right;
+  margin-top: 10px;
+  width:30px; 
+  height:30px; 
+  margin-right:5px;
+}
+</style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Selector</a>
+                </div>
+                <div class="navbar-collapse collapse">          
+                    <span class="navbar-login">
+                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"></asp:LinkButton>
+                    </span>           
+                    <img  src="img/bot.jpg" alt="nada" class="img-circle imglogin" />
+                </div>
+            </div>
+        </div>                                                          
+                                                                    
+        <div class="container-fluid">                                   
+            <div class="row">                                             
+                <div class="col-sm-3 col-md-2 sidebar">                                                                              
+                    <ul class="nav nav-sidebar">            
+                        <li runat="server" id="lnkDefault"><a href="Home.aspx"><i class="glyphicon glyphicon-user ico"></i>Datos Personales</a></li>
+                        <li runat="server" id="lnkDefault2"><a href="Estudios.aspx"><i class="glyphicon glyphicon-pencil ico"></i>Estudios</a></li>
+                        <li runat="server"><a href="#"><i class="glyphicon glyphicon-briefcase ico"></i>Experiencias</a></li>
+                        <li runat="server"><a href="#"><i class="glyphicon glyphicon-paperclip ico"></i>Referencias</a></li>
+                        <li runat="server"><a href="#"><i class="glyphicon glyphicon-list-alt ico"></i>Reportes</a></li>
+                        <li runat="server"><a href="#"><i class="glyphicon glyphicon-cog ico"></i>Administrar Cuenta</a></li>
+                     </ul>
+                </div>
+                
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+</body>
+</html>
+
+                                           
+                                           
+                                           
+                                           
