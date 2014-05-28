@@ -291,164 +291,163 @@
 
 
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
-    <table border="1">
-        <tr>
-            <td>Cedula: </td>
-            <td>
-    <asp:TextBox ID="tbDocumento" runat="server" MaxLength="10"></asp:TextBox>
-            </td>
-            <td><asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
-    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Eliminar" />
+    
+
+            <h1 class="page-header">Datos Personales</h1>
+            <div class="row" style="padding-top:5px;">          
+                <div class="col-md-10" style="background-color:;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Numero de documento</label>
+                            <asp:TextBox ID="tbDocumento" CssClass="form-control input-sm" runat="server" MaxLength="10"></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Nombres</label>
+                            <asp:TextBox ID="tbNombre" runat="server" CssClass="form-control input-sm"></asp:TextBox>                          
+                        </div>
+                        <div class="col-md-3">
+                            <label>Apellidos</label>
+                            <asp:TextBox ID="tbApellidos" runat="server" CssClass="form-control input-sm"></asp:TextBox> 
+                        </div>
+                        <div class="col-md-3">
+                            <label>Tipo Documento</label>
+                            <asp:TextBox ID="tbTipoDoc" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                    </div>                
+                </div>
+            <div class="col-md-2" ></div>
+            </div>
+
+            <div class="row" style="padding-top:5px;">          
+                <div class="col-md-10" style="background-color:;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Fecha De Nacimiento</label>
+                            <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="tbFecNac" Format="yyyy/MM/dd"></asp:CalendarExtender>
+                            <asp:TextBox ID="tbFecNac" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                     
+                        </div>
+                        <div class="col-md-3">
+                            <label>Grupo Sanguineo</label>
+                            <asp:TextBox ID="tbGruSan" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Estado Civil</label>
+                            <asp:TextBox ID="tbEstCiv" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Genero</label>
+                            <asp:TextBox ID="tbGen" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                    </div>                
+                </div>
+            <div class="col-md-2" style="background-color:;"></div>
+            </div>
+
+                <div class="row" style="padding-top:5px;">          
+                <div class="col-md-10" style="background-color:;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>No. Libreta Militar</label>
+                            <asp:TextBox ID="tbNumLib" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Clase Libreta Militar:</label>
+                            <asp:TextBox ID="tbClaLib" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Numero De Hijos:</label>
+                            <asp:TextBox ID="tbNumHij" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Pais De Origen:</label>
+                            <asp:TextBox ID="tbPaiOri" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                    </div>                
+                </div>
+            <div class="col-md-2" style="background-color:;"></div>
+            </div>
+
+                <div class="row" style="padding-top:5px;">          
+                <div class="col-md-10" style="background-color:;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Pais De Residencia</label>
+                            <asp:TextBox ID="tbPaiRes" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Departamento</label>
+                            <asp:TextBox ID="tbDep" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Ciudad</label>
+                            <asp:TextBox ID="tbCiu" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Barrio:</label>
+                            <asp:TextBox ID="tbBar" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                    </div>                
+                </div>
+            <div class="col-md-2" style="background-color:;"></div>
+            </div>
+
+                <div class="row" style="padding-top:5px;">          
+                <div class="col-md-10" style="background-color:;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Telefono</label>
+                            <asp:TextBox ID="tbTel" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Direccion:</label>
+                            <asp:TextBox ID="tbDir" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Telefono Movil:</label>
+                            <asp:TextBox ID="tbTelMov" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Persona De Contacto:</label>
+                            <asp:TextBox ID="tbPerCon" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                    </div>                
+                </div>
+            <div class="col-md-2" style="background-color:;"></div>
+            </div>
+
+                <div class="row" style="padding-top:5px;">          
+                <div class="col-md-10" style="background-color:;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>No. Persona De Contacto</label>
+                            <asp:TextBox ID="tbNumPerCon" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cargo Al Que Aplica</label>
+                            <asp:TextBox ID="tbCarApl" runat="server" CssClass="form-control input-sm" ></asp:TextBox>                      
+                        </div>
+                        <div class="col-md-3">
+                            <label>Aspiracion Salarial</label>
+                            <asp:TextBox ID="tbAspSal" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Foto</label>
+                            <asp:TextBox ID="tbFot" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                        </div>
+                    </div>                
+                </div>
+            <div class="col-md-2" style="background-color:;"></div>
+            </div>
+            <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
+                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Eliminar" />
                 <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Editar" />
                 <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Insertar" />
-            </td>
-        </tr>
-        <tr>
-            <td>Nombres:</td>
-            <td style="margin-left: 40px">
-    <asp:TextBox ID="tbNombre" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>Apellidos: </td>
-            <td>
-    <asp:TextBox ID="tbApellidos" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>Tipo Documento:</td>
-            <td>
-    <asp:TextBox ID="tbTipoDoc" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>Fecha De Nacimiento:</td>
-            <td>
-                <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="tbFecNac" Format="yyyy/MM/dd">
-                </asp:CalendarExtender>
-                <asp:TextBox ID="tbFecNac" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-         <tr>
-            <td>Grupo Sanguineo:</td>
-            <td>
-                <asp:TextBox ID="tbGruSan" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Estado Civil:</td>
-            <td>
-                <asp:TextBox ID="tbEstCiv" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Genero:</td>
-            <td>
-                <asp:TextBox ID="tbGen" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>No. Libreta Militar:</td>
-            <td>
-                <asp:TextBox ID="tbNumLib" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Clase Libreta Militar:</td>
-            <td>
-                <asp:TextBox ID="tbClaLib" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Numero De Hijos:</td>
-            <td>
-                <asp:TextBox ID="tbNumHij" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Pais De Origen:</td>
-            <td>
-                <asp:TextBox ID="tbPaiOri" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Pais De Residencia:</td>
-            <td>
-                <asp:TextBox ID="tbPaiRes" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Departamento:</td>
-            <td>
-                <asp:TextBox ID="tbDep" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Ciudad:</td>
-            <td>
-                <asp:TextBox ID="tbCiu" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Barrio:</td>
-            <td>
-                <asp:TextBox ID="tbBar" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Telefono:</td>
-            <td>
-                <asp:TextBox ID="tbTel" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Direccion:</td>
-            <td>
-                <asp:TextBox ID="tbDir" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Telefono Movil:</td>
-            <td>
-                <asp:TextBox ID="tbTelMov" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Persona De Contacto:</td>
-            <td>
-                <asp:TextBox ID="tbPerCon" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>No. Persona De Contacto</td>
-            <td>
-                <asp:TextBox ID="tbNumPerCon" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Cargo Al Que Aplica:</td>
-            <td>
-                <asp:TextBox ID="tbCarApl" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Aspiracion Salarial:</td>
-            <td>
-                <asp:TextBox ID="tbAspSal" runat="server"></asp:TextBox>
-             </td>
-        </tr>
-         <tr>
-            <td>Foto:</td>
-            <td>
-                <asp:TextBox ID="tbFot" runat="server"></asp:TextBox>
 
-                <asp:FileUpload ID="FileUpload1" runat="server" />
 
-             </td>
-        </tr>
 
-    </table>
-&nbsp;<br />
+
+
     <asp:GridView ID="gv1" runat="server">
     </asp:GridView>
     <br />
