@@ -366,7 +366,58 @@ namespace Datos
         command.Parameters.Clear();
         return orderList;
     }
+
+    public static void registrarReferencia(string documento, string nombres, string apellidos, string tipoReferencia, string telefono, string movil)
+    {
+        string query = "InsertarReferencia";
+        conn.Open();
+        command.CommandText = query;
+
+        command.CommandType = CommandType.StoredProcedure;
+        command.Parameters.AddWithValue("@dcoumento", documento);
+        command.Parameters.AddWithValue("@nombres", nombres);
+        command.Parameters.AddWithValue("@apellidos", apellidos);
+        command.Parameters.AddWithValue("@tipoReferencia", tipoReferencia);
+        command.Parameters.AddWithValue("@telefono", telefono);
+        command.Parameters.AddWithValue("@movil", movil);
+        command.ExecuteNonQuery();
+        command.Parameters.Clear();
+        conn.Close();
+    }
         
+
+
+        public static DataTable datosReferencia()
+        {
+            /*  DataTable tabla = new DataTable();
+              string query = string.Format("SELECT * FROM Aspirante WHERE numDocumento LIKE " + documento);
+
+        
+              conn.Open();
+              command.CommandText = query;
+
+              SqlDataAdapter adaptadorTabla = new SqlDataAdapter(query, conn);
+                adaptadorTabla.Fill(tabla);
+                return tabla;*/
+
+
+            DataTable tabla = new DataTable();
+            string query = "DatosReferencia";
+
+
+            conn.Open(); ///abro la conexion
+            command.CommandText = query;  ///le indico que el procedimiento se llama selectAspirante
+            command.CommandType = System.Data.CommandType.StoredProcedure; ///le indico que se utilizara un procedimiento almacenado
+            //command.Parameters.AddWithValue("@documento", documento);  ///le paso el parametro que requiere el procedimiento
+            SqlDataReader DataReaderExecutador = command.ExecuteReader();  ///leo el resultado
+            tabla.Load(DataReaderExecutador);  //// cargo el resultado en una tabla
+            command.Parameters.Clear();
+            conn.Close();
+            return tabla;          ////retorno la tabla
+
+
+        }
+
     }
 
     

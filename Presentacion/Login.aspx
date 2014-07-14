@@ -30,7 +30,7 @@
                                 
                             <div style="margin-bottom: 25px" class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <asp:TextBox ID="tbpass" Type="password" runat="server"  class="form-control" placeholder="Contraseña"></asp:TextBox>
+                                <asp:TextBox ID="tbpass" Type="password" runat="server"  Cssclass="form-control" placeholder="Contraseña"></asp:TextBox>
                                 <asp:HiddenField ID="HiddenField1" runat="server" />
                             </div>
                                                               
@@ -48,8 +48,6 @@
                                     </div>
                                 </div>
                             </div>   
-                             
-
                         </form>   
                 </div><!--panel body-->
             </div>  <!--Panel info-->

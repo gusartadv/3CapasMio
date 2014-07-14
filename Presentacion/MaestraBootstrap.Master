@@ -72,7 +72,7 @@
                         <li runat="server" id="lnkDefault"><a href="Home.aspx"><i class="glyphicon glyphicon-user ico"></i>Datos Personales</a></li>
                         <li runat="server" id="lnkDefault2"><a href="Estudios.aspx"><i class="glyphicon glyphicon-pencil ico"></i>Estudios</a></li>
                         <li runat="server"><a href="#"><i class="glyphicon glyphicon-briefcase ico"></i>Experiencias</a></li>
-                        <li runat="server"><a href="#"><i class="glyphicon glyphicon-paperclip ico"></i>Referencias</a></li>
+                        <li runat="server" id="lnkDefault4"><a href="Referencias.aspx"><i class="glyphicon glyphicon-paperclip ico"></i>Referencias</a></li>
                         <li runat="server"><a href="#"><i class="glyphicon glyphicon-list-alt ico"></i>Reportes</a></li>
                         <li runat="server"><a href="#"><i class="glyphicon glyphicon-cog ico"></i>Administrar Cuenta</a></li>
                      </ul>

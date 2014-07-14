@@ -114,7 +114,7 @@
         Negocio.DatosPersonales.eliminarPersona(tbDocumento.Text);
         
     }
-
+    
     protected void Button3_Click(object sender, EventArgs e)
     {
         string rutaFoto;
@@ -122,7 +122,7 @@
         {
             if (FileUpload1.PostedFile.ContentLength < 1048576)
             {
-
+   
                 string[] validFileTypes = { "bmp", "gif", "png", "jpg", "jpeg", "BMP", "GIF", "PNG", "JPG", "JPEG" };
                 string ext = System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName);
                 int fileSize = FileUpload1.PostedFile.ContentLength;
@@ -144,15 +144,16 @@
                 else
                 {
                     string fileName = System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName);
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath("~/img/") + tbDocumento.Text + fileName);
                     rutaFoto = tbDocumento.Text + fileName;
+                    FileUpload1.PostedFile.SaveAs(Server.MapPath("~/img/") + tbDocumento.Text + fileName);
+
 
                     Negocio.DatosPersonales.updateDatosPersona(tbDocumento.Text, tbNombre.Text, tbApellidos.Text, tbTipoDoc.Text, Convert.ToDateTime(tbFecNac.Text), tbGruSan.Text, tbEstCiv.Text, tbGen.Text, tbNumLib.Text,
             tbClaLib.Text, tbNumHij.Text, tbPaiOri.Text, tbPaiRes.Text, tbDep.Text, tbCiu.Text, tbBar.Text, tbTel.Text, tbDir.Text, tbTelMov.Text, tbPerCon.Text,
             tbNumPerCon.Text, tbCarApl.Text, tbAspSal.Text, rutaFoto);
-
+                    
                     Label1.ForeColor = System.Drawing.Color.Green;
-                    Label1.Text = "File uploaded successfully.";
+                    Label1.Text = rutaFoto;
                     // Response.Redirect(Request.Url.AbsoluteUri);
                 }
 
@@ -160,9 +161,12 @@
             else
                 Label1.Text = "La imagen debe tener un tamaño menor a 1mb";
         }//cierre hashfile    
-        
-        
-        
+        else
+        {
+            Negocio.DatosPersonales.updateDatosPersona(tbDocumento.Text, tbNombre.Text, tbApellidos.Text, tbTipoDoc.Text, Convert.ToDateTime(tbFecNac.Text), tbGruSan.Text, tbEstCiv.Text, tbGen.Text, tbNumLib.Text,
+tbClaLib.Text, tbNumHij.Text, tbPaiOri.Text, tbPaiRes.Text, tbDep.Text, tbCiu.Text, tbBar.Text, tbTel.Text, tbDir.Text, tbTelMov.Text, tbPerCon.Text,
+tbNumPerCon.Text, tbCarApl.Text, tbAspSal.Text, tbFot.Text);
+        }
     }
     
     protected void Button4_Click(object sender, EventArgs e)
@@ -273,8 +277,12 @@
                 string aspiracionSalarial = tabla2.Rows[0]["aspiracionSalarial"].ToString();
                 tbAspSal.Text = aspiracionSalarial;
 
+              
                 string foto = tabla2.Rows[0]["foto"].ToString();
+                Session["foto"] = tabla2.Rows[0]["foto"].ToString();
                 tbFot.Text = foto;
+
+                
 
             }
             else
@@ -291,11 +299,31 @@
 
 
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
-    
+            
 
-            <h1 class="page-header">Datos Personales</h1>
+        <%
+           string[] carpetaImagenes = System.IO.Directory.GetFiles(Server.MapPath("~/img/"));
+           foreach (string imagen in carpetaImagenes)
+           {
+               if (System.IO.Path.GetFileName(imagen) == Session["foto"].ToString())
+                {
+                    try
+                    {
+                        Image1.ImageUrl = "~/img/" + tbFot.Text;
+                    }
+                    catch {
+                        Image1.ImageUrl = "~/img/no-photo.gif";
+                    }
+                       
+                }
+            }
+        %>
+    
+            <asp:Label ID="Label2" runat="server"></asp:Label>
+            <h1 class="page-header">Datos Personales<asp:Image ID="Image1" runat="server" CssClass="img-thumbnail" Style="width:140px; height:140px;"  />
+                            </h1>
             <div class="row" style="padding-top:5px;">          
-                <div class="col-md-10" style="background-color:;">
+                <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-3">
                             <label>Numero de documento</label>
@@ -319,7 +347,7 @@
             </div>
 
             <div class="row" style="padding-top:5px;">          
-                <div class="col-md-10" style="background-color:;">
+                <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-3">
                             <label>Fecha De Nacimiento</label>
@@ -340,11 +368,11 @@
                         </div>
                     </div>                
                 </div>
-            <div class="col-md-2" style="background-color:;"></div>
+            <div class="col-md-2"></div>
             </div>
 
                 <div class="row" style="padding-top:5px;">          
-                <div class="col-md-10" style="background-color:;">
+                <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-3">
                             <label>No. Libreta Militar</label>
@@ -364,11 +392,11 @@
                         </div>
                     </div>                
                 </div>
-            <div class="col-md-2" style="background-color:;"></div>
+            <div class="col-md-2"></div>
             </div>
 
                 <div class="row" style="padding-top:5px;">          
-                <div class="col-md-10" style="background-color:;">
+                <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-3">
                             <label>Pais De Residencia</label>
@@ -388,11 +416,11 @@
                         </div>
                     </div>                
                 </div>
-            <div class="col-md-2" style="background-color:;"></div>
+            <div class="col-md-2" ></div>
             </div>
 
                 <div class="row" style="padding-top:5px;">          
-                <div class="col-md-10" style="background-color:;">
+                <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-3">
                             <label>Telefono</label>
@@ -412,11 +440,11 @@
                         </div>
                     </div>                
                 </div>
-            <div class="col-md-2" style="background-color:;"></div>
+            <div class="col-md-2" style=""></div>
             </div>
 
                 <div class="row" style="padding-top:5px;">          
-                <div class="col-md-10" style="background-color:;">
+                <div class="col-md-10" style="">
                     <div class="row">
                         <div class="col-md-3">
                             <label>No. Persona De Contacto</label>
@@ -432,12 +460,12 @@
                         </div>
                         <div class="col-md-3">
                             <label>Foto</label>
-                            <asp:TextBox ID="tbFot" runat="server" CssClass="form-control input-sm" ></asp:TextBox>
+                            <asp:TextBox ID="tbFot" runat="server" CssClass="form-control input-sm" Enabled="False"></asp:TextBox>
                             <asp:FileUpload ID="FileUpload1" runat="server" />
                         </div>
                     </div>                
                 </div>
-            <div class="col-md-2" style="background-color:;"></div>
+            <div class="col-md-2"></div>
             </div>
             <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Eliminar" />

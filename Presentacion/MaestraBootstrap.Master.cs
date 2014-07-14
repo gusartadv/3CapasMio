@@ -13,7 +13,7 @@ namespace Presentacion
         {
             if (Request.Url.AbsolutePath.EndsWith("Home.aspx"))
             {
-                lnkDefault.Attributes["class"] = "active";
+                lnkDefault.Attributes["class"] = "active"; // lnkDefault id la etiqueta li para dar estilo active
             }
 
             if(Request.Url.AbsolutePath.EndsWith("Estudios.aspx"))
@@ -21,6 +21,10 @@ namespace Presentacion
                 lnkDefault2.Attributes["class"] = "active";
             }
 
+            if (Request.Url.AbsolutePath.EndsWith("Referencias.aspx"))
+            {
+                lnkDefault4.Attributes["class"] = "active";
+            }
 
 
              if (Session["login"] != null)

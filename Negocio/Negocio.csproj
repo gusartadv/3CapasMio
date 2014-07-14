@@ -44,6 +44,8 @@
     <Compile Include="Estudio.cs" />
     <Compile Include="LogicaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referencia.cs" />
+    <Compile Include="TablaDinamica.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

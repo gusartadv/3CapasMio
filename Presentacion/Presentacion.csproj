@@ -76,11 +76,13 @@
     <Content Include="Home.aspx" />
     <Content Include="img\admin.ico" />
     <Content Include="img\bot.jpg" />
+    <Content Include="img\no-photo.gif" />
     <Content Include="img\pc.ico" />
     <Content Include="img\user.ico" />
     <Content Include="img\world.ico" />
     <Content Include="Login.aspx" />
     <Content Include="NuevoUsuario.aspx" />
+    <Content Include="Referencias.aspx" />
     <Content Include="Scripts\jquery-1.11.0.js" />
     <Content Include="Scripts\jquery-1.11.0.min.js" />
     <Content Include="StyleSheet.css" />
@@ -133,6 +135,13 @@
       <DependentUpon>NuevoUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Referencias.aspx.cs">
+      <DependentUpon>Referencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Referencias.aspx.designer.cs">
+      <DependentUpon>Referencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
