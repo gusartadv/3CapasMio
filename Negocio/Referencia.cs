@@ -20,5 +20,15 @@ namespace Negocio
         {
             return ConnectionClass.datosReferencia();
         }
+
+        public static void NDeleteReferencia(string Referencia)
+        {
+            Datos.ConnectionClass.deleteReferencia(Referencia);
+        }
+
+        public static void NactualizarReferencia(string idReferencia, string documento, string nombre, string apellidos, string tipoReferencia, string telefono, string movil)
+        {
+            Datos.ConnectionClass.actualizarReferencia(idReferencia,documento,nombre,apellidos,tipoReferencia,telefono,movil);
+        }
     }
 }

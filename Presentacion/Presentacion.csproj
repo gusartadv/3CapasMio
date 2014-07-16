@@ -81,6 +81,7 @@
     <Content Include="img\user.ico" />
     <Content Include="img\world.ico" />
     <Content Include="Login.aspx" />
+    <Content Include="modal.aspx" />
     <Content Include="NuevoUsuario.aspx" />
     <Content Include="Referencias.aspx" />
     <Content Include="Scripts\jquery-1.11.0.js" />
@@ -127,6 +128,13 @@
       <DependentUpon>MasterPage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="modal.aspx.cs">
+      <DependentUpon>modal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modal.aspx.designer.cs">
+      <DependentUpon>modal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NuevoUsuario.aspx.cs">
       <DependentUpon>NuevoUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,9 +146,6 @@
     <Compile Include="Referencias.aspx.cs">
       <DependentUpon>Referencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Referencias.aspx.designer.cs">
-      <DependentUpon>Referencias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

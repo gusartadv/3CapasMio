@@ -418,7 +418,47 @@ namespace Datos
 
         }
 
+        public static void deleteReferencia(string idReferencia)
+        {
+            string query = "deleteReferencia";
+            command.CommandText = query;
+            conn.Open();
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idReferencia", idReferencia);
+            command.ExecuteNonQuery();          //ejecuto el comando
+
+            conn.Close();
+            command.Parameters.Clear(); // importante limpiar para no generar errores por tener demasiados parametros
+
+        }
+
+
+        public static void actualizarReferencia(string idReferencia, string documento, string nombre, string apellidos, string tipoReferencia, string telefono, string movil)
+        {
+            string query = "updateReferencias";
+            command.CommandText = query;
+
+
+
+            conn.Open();
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idReferencia", idReferencia);
+            command.Parameters.AddWithValue("@documento", documento);
+            command.Parameters.AddWithValue("@nombres", nombre);
+            command.Parameters.AddWithValue("@apellidos", apellidos);
+            command.Parameters.AddWithValue("@tipoReferencia", tipoReferencia);
+            command.Parameters.AddWithValue("@telefono", telefono);
+            command.Parameters.AddWithValue("@movil", movil);
+            command.ExecuteNonQuery();
+            conn.Close();
+            command.Parameters.Clear();
+
+        }
+
+
+
     }
+
 
     
 }

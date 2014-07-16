@@ -302,6 +302,7 @@ tbNumPerCon.Text, tbCarApl.Text, tbAspSal.Text, tbFot.Text);
             
 
         <%
+            
            string[] carpetaImagenes = System.IO.Directory.GetFiles(Server.MapPath("~/img/"));
            foreach (string imagen in carpetaImagenes)
            {

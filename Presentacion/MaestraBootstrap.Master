@@ -10,9 +10,13 @@
     </asp:ContentPlaceHolder>
 
     <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.css" />    
+    <script src="Scripts/jquery-1.11.0.js"></script>
+    <script src="Bootstrap/js/bootstrap.js"></script>
     <link href="Bootstrap/css/dashboard.css" rel="stylesheet" />
     <style type="text/css" id="Style1"></style>
-    
+
+
+  
     
     <script type="text/javascript">
        
